@@ -1,0 +1,45 @@
+{
+  "name": "bufferbuilder",
+  "version": "1.0.0",
+  "description": "Bufferbuilder for JS/TS",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/chai": "^4.1.3",
+    "@types/express": "^4.16.0",
+    "@types/mocha": "^5.2.2",
+    "@types/node": "^10.3.4",
+    "@types/rimraf": "^2.0.2",
+    "chai": "^4.1.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2",
+    "reflect-metadata": "^0.1.12",
+    "rimraf": "^2.6.2",
+    "ts-node": "^7.0.0",
+    "tslint": "^5.10.0",
+    "typedoc": "^0.11.1",
+    "typescript": "^2.9.2",
+    "uglify-es": "^3.3.10"
+  },
+  "scripts": {
+    "test": "rimraf temp && mocha --require ts-node/register test/*.ts",
+    "test:watch": "mocha --watch --watch-extensions ts --reporter min --require ts-node/register test/*.ts",
+    "test:coverage": "rimraf temp && nyc --extension .ts npm test && nyc report --reporter=html --reporter=lcov",
+    "build": "tsc",
+    "build:release": "npm run clean && npm run test:coverage && npm run lint && npm run build && npm run docs",
+    "build:watch": "tsc --watch",
+    "lint": "tslint -p tsconfig.json -e test/*.ts",
+    "docs": "typedoc --out documentation --name BufferBuilder --mode file lib/index.ts",
+    "clean": "rimraf .nyc_output coverage documentation web index.js index.d.ts index.js.map test/*.js test/*.d.ts test/*.js.map lib/*.js lib/*.d.ts lib/*.js.map temp"
+  },
+  "author": "Mark Albert",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WowMuchName/bufferbuilder.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WowMuchName/bufferbuilder/issues"
+  },
+  "homepage": "https://github.com/WowMuchName/bufferbuilder#readme"
+}
