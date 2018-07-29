@@ -32,6 +32,12 @@
     "docs": "typedoc --out documentation --name BufferBuilder --mode file lib/index.ts",
     "clean": "rimraf .nyc_output coverage documentation web index.js index.d.ts index.js.map test/*.js test/*.d.ts test/*.js.map lib/*.js lib/*.d.ts lib/*.js.map temp"
   },
+  "keywords": [
+    "buffer",
+    "stream",
+    "bufferbuilder",
+    "io"
+  ],
   "author": "Mark Albert",
   "repository": {
     "type": "git",
