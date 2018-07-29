@@ -7,7 +7,7 @@
 Provides an efficient builder for Buffers and utility methods to interact with them.
 
 ```
-npm i bufferbuilder --save
+npm i ts-bufferbuilder --save
 ```
 
 ## Merging buffers

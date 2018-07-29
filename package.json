@@ -1,5 +1,5 @@
 {
-  "name": "bufferbuilder",
+  "name": "ts-bufferbuilder",
   "version": "1.0.0",
   "description": "Bufferbuilder for JS/TS",
   "main": "index.js",
