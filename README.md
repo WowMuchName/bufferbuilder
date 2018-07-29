@@ -1,5 +1,14 @@
 # BufferBuilder
+
+[![Build Status](https://travis-ci.org/WowMuchName/bufferbuilder.svg?branch=master)](https://travis-ci.org/WowMuchName/bufferbuilder)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/132bd9777ac703a2db08/test_coverage)](https://codeclimate.com/github/WowMuchName/bufferbuilder/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/132bd9777ac703a2db08/maintainability)](https://codeclimate.com/github/WowMuchName/bufferbuilder/maintainability)
+
 Provides an efficient builder for Buffers and utility methods to interact with them.
+
+```
+npm i bufferbuilder --save
+```
 
 ## Merging buffers
 Buffers and strings can be merged into a buffer using the *append* method.
