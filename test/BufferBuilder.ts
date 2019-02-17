@@ -7,7 +7,7 @@ import { Writable, Readable } from "stream";
 describe("BufferBuilder", function () {
     describe("#isBuffer", () => {
         it("should detect buffers", () => {
-            assert.isTrue(BufferBuilder.isBuffer(new Buffer("")));
+            assert.isTrue(BufferBuilder.isBuffer(Buffer.from("")));
         });
         it("shouldn't detect non buffers", () => {
             assert.isTrue(!BufferBuilder.isBuffer({}));
@@ -27,15 +27,15 @@ describe("BufferBuilder", function () {
         });
         it("should append buffers", () => {
             let bb: BufferBuilder = new BufferBuilder();
-            bb.append(new Buffer("Hello")).append(" ").append(new Buffer("World"));
+            bb.append(Buffer.from("Hello")).append(" ").append(Buffer.from("World"));
             assert.equal(bb.toBuffer().toString(), "Hello World");
-            bb.append(new Buffer(" ")).append("Goodbye ").append(new Buffer("World"));
+            bb.append(Buffer.from(" ")).append("Goodbye ").append(Buffer.from("World"));
             assert.equal(bb.toBuffer().toString(), "Hello World Goodbye World");
             assert.equal(bb.toBuffer().toString(), "Hello World Goodbye World");
         });
         it("should append with none default encoding", () => {
             let bb: BufferBuilder = new BufferBuilder();
-            bb.append(new Buffer("ÄÜÖ", "utf8").toString("latin1"), "latin1");
+            bb.append(Buffer.from("ÄÜÖ", "utf8").toString("latin1"), "latin1");
             assert.equal(bb.toString("utf8"), "ÄÜÖ");
         });
     });

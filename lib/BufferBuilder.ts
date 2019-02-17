@@ -18,9 +18,9 @@ export class BufferBuilder {
             return data as Buffer;
         }
         if (typeof encoding === "string") {
-            return new Buffer(data.toString(), encoding);
+            return Buffer.from(data.toString(), encoding);
         }
-        return new Buffer(data.toString());
+        return Buffer.from(data.toString());
     }
 
     /**
@@ -104,7 +104,7 @@ export class BufferBuilder {
                 size += part.length;
             }
             const oldBuffer = this.buffer;
-            this.buffer = new Buffer(size);
+            this.buffer = Buffer.alloc(size);
             oldBuffer.copy(this.buffer, 0);
             let ptr = oldBuffer.length;
             for (const part of this.partsToAppend) {
